@@ -28,6 +28,10 @@
             <dd>
                 <textarea name="contents" rows="10" cols="60"></textarea>
             </dd>
+            <dt>パスワード：</dt>
+            <dd>
+                <input type="password" name="password">
+            </dd>
         </dl><input type="reset" value="リセット" />
         <input type="submit" value="送信" />
 
