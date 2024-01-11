@@ -7,7 +7,11 @@
 
 <body>
    <h1>○○のブログ</h1>
-   <button><a href="http://localhost:8080/blog/post.php">作成</a></button>
+   <form action="post.php" method="post">
+      <p>
+         <input type="submit" value="作成">
+      </p>
+   </form>
 
    <hr />
 
@@ -24,6 +28,12 @@
          <h3>
             <?php echo $row['title'] ?>
          </h3>
+         <form action="edit.php" method="post">
+            <p>
+               <input type="submit" value="編集">
+               <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
+            </p>
+         </form>
          <p>
             <?php echo $row['contents'] ?><br>
             (
@@ -36,7 +46,7 @@
       print "エラー!: " . $e->getMessage() . "<br/>";
       die();
    }
-   
+
    ?>
 
 </body>
