@@ -33,13 +33,18 @@
 
     </form>
 
+
+
     <!-- タイトルと本文があったら入る -->
     <?php
+
     // タイトルと本文の入力をチェック
     if (empty($_POST["title"]) || empty($_POST["contents"])) {
-        echo "<h3>タイトルと本文は必須です。</h3>";
+        $test_alert = "<script type='text/javascript'>alert('タイトルと本文は必須です。');</script>";
+        echo $test_alert;
     } elseif (!isset($_POST["password"]) || $_POST["password"] != 'correctPass') {
-        echo "<h3>パスワードが違います。</h3>";
+        $test_alert = "<script type='text/javascript'>alert('パスワードが違います。');</script>";
+        echo $test_alert;
     } else {
         try {
 
@@ -55,6 +60,11 @@
             //prepareした$sthを実行SQL文の？部に格納する変数を指定
             $sth->execute(array($_POST["title"], $_POST["contents"], $time));
 
+
+            $test_alert = "<script type='text/javascript'>alert('記事を投稿しました！');</script>";
+            echo $test_alert;
+            
+            exit();
         } catch (PDOException $e) {
 
         }
