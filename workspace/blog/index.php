@@ -28,16 +28,17 @@
          <h3>
             <?php echo $row['title'] ?>
          </h3>
+
+         <p>
+            <?php echo $row['contents'] ?><br>
          <form action="edit.php" method="post">
             <p>
                <input type="submit" value="編集">
                <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
             </p>
          </form>
-         <p>
-            <?php echo $row['contents'] ?><br>
-            (
-            <?php echo $time[0] . "年" . $time[1] . "月" . $time[2] . "日 " . $time[3] . ":" . $time[4] ?>)
+         (
+         <?php echo $time[0] . "年" . $time[1] . "月" . $time[2] . "日 " . $time[3] . ":" . $time[4] ?>)
          </p>
          <hr />
          <?php
