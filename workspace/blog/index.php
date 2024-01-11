@@ -2,11 +2,11 @@
 
 <head>
    <meta charset="utf-8">
-   <title>○○のブログサイト</title>
+   <title>由川聖弥のブログサイト</title>
 </head>
 
 <body>
-   <h1>○○のブログ</h1>
+   <h1>由川聖弥のブログ</h1>
    <form action="post.php" method="post">
       <p>
          <input type="submit" value="作成">
