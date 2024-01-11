@@ -14,7 +14,7 @@
    <?php
    try {
       $dbh = new PDO('sqlite:blog.db', '', '');   //PDOクラスのオブジェクトの作成
-      $sth = $dbh->prepare("select * from posts order by date");   //prepareメソッドでSQL文の準備
+      $sth = $dbh->prepare("select * from posts order by date desc");   //prepareメソッドでSQL文の準備
       $sth->execute();   //準備したSQL文の実行
    
       while ($row = $sth->fetch()) {
@@ -36,6 +36,7 @@
       print "エラー!: " . $e->getMessage() . "<br/>";
       die();
    }
+   
    ?>
 
 </body>
