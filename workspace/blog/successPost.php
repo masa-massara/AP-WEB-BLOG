@@ -7,6 +7,6 @@
     <title>投稿成功メッセージ</title>
 </head>
 <script>alert("投稿しました");
-    location.href = "./post.php"</script>
+    location.href = "./index.php"</script>
 
 <body>
