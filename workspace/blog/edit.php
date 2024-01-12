@@ -1,3 +1,67 @@
+<?php
+try {
+
+  //PDOクラスのオブジェクトの作成
+  $dbh = new PDO('sqlite:blog.db', '', '');
+
+  if (isset($_POST["id"]) && !isset($_POST["title"]) && !isset($_POST["contents"])) {
+
+    //実行するSQL文を$sqlに格納
+    //index.phpから転送されたidを元に対象記事を抽出する
+    $sql = 'select * from posts where id=?';
+    //prepareメソッドでSQL文の準備
+    $sth = $dbh->prepare($sql);
+    //prepareした$sthを実行　SQL文の？部に格納する変数を指定
+    $sth->execute(array($_POST["id"]));
+
+    if ($row = $sth->fetch()) {
+      $_POST["title"] = $row['title'];
+      $_POST["contents"] = $row['contents'];
+    }
+
+  } elseif (isset($_POST["id"]) && isset($_POST["title"]) && isset($_POST["contents"])) {
+    if (empty($_POST["title"]) || empty($_POST["contents"])) {
+      $title_value = $_POST['title'];
+      $contents_value = $_POST['contents'];
+      $test_alert = "<script type='text/javascript'>alert('タイトルと本文は必須です。');</script>";
+      echo $test_alert;
+    } elseif (!isset($_POST["password"]) || $_POST["password"] != 'correctPass') {
+      $title_value = $_POST['title'];
+      $contents_value = $_POST['contents'];
+      $test_alert = "<script type='text/javascript'>alert('パスワードが違います。');</script>";
+      echo $test_alert;
+    } else {
+
+      //実行するSQL文を$sqlに格納
+      $sql = 'update posts set title=?, contents=? where id=?';
+      //prepareメソッドでSQL文の準備
+      $sth = $dbh->prepare($sql);
+      //prepareした$sthを実行　SQL文の？部に格納する変数を指定
+      $sth->execute(array($_POST["title"], $_POST["contents"], $_POST["id"]));
+
+      if ($sth) {
+        // 編集が成功したらリダイレクト
+        header('Location: ./successEdit.php');
+        exit();
+      } else {
+        // 編集が失敗したらリダイレクト
+        header('Location: ./failedEdit.php');
+        exit();
+      }
+
+    }
+  }
+
+  $dbh = null;
+
+} catch (PDOException $e) {
+  print "エラー!: " . $e->getMessage() . "<br/>";
+  die();
+}
+
+?>
+
+
 <html>
 
 <head>
@@ -7,56 +71,6 @@
 
 <body>
   <h1>ブログ記事の編集</h1>
-  <?php
-  try {
-
-    //PDOクラスのオブジェクトの作成
-    $dbh = new PDO('sqlite:blog.db', '', '');
-
-    if (isset($_POST["id"]) && !isset($_POST["title"]) && !isset($_POST["contents"])) {
-
-      //実行するSQL文を$sqlに格納
-      //index.phpから転送されたidを元に対象記事を抽出する
-      $sql = 'select * from posts where id=?';
-      //prepareメソッドでSQL文の準備
-      $sth = $dbh->prepare($sql);
-      //prepareした$sthを実行　SQL文の？部に格納する変数を指定
-      $sth->execute(array($_POST["id"]));
-
-      if ($row = $sth->fetch()) {
-        $_POST["title"] = $row['title'];
-        $_POST["contents"] = $row['contents'];
-      }
-
-    } elseif (isset($_POST["id"]) && isset($_POST["title"]) && isset($_POST["contents"])) {
-      if (!isset($_POST["password"]) || $_POST["password"] != 'abcdef') {
-        echo '<p>パスワードが違います</p>';
-      } else {
-
-        //実行するSQL文を$sqlに格納
-        $sql = 'update posts set title=?, contents=? where id=?';
-        //prepareメソッドでSQL文の準備
-        $sth = $dbh->prepare($sql);
-        //prepareした$sthを実行　SQL文の？部に格納する変数を指定
-        $sth->execute(array($_POST["title"], $_POST["contents"], $_POST["id"]));
-
-        if ($sth) {
-          echo "記事１件を更新しました";
-        } else {
-          echo "記事１件の更新に失敗しました";
-        }
-
-      }
-    }
-
-    $dbh = null;
-
-  } catch (PDOException $e) {
-    print "エラー!: " . $e->getMessage() . "<br/>";
-    die();
-  }
-
-  ?>
 
   <p><a href="index.php">blog閲覧ページはこちら</a></p>
   <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
