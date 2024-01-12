@@ -1,6 +1,6 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // タイトルと本文の入力をチェック
+if (isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
+
     if (empty($_POST["title"]) || empty($_POST["contents"])) {
         $title_value = $_POST['title'];
         $contents_value = $_POST['contents'];
@@ -28,10 +28,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $_POST['title'] = null;
             $_POST["contents"] = null;
+            $_POST["password"] = null;
 
-            $test_alert = "<script type='text/javascript'>alert('記事を投稿しました！');</script>";
-
-            echo $test_alert;
+            // 投稿が成功したらリダイレクト
+            header('Location: ./successPost.php');
+            exit();
 
 
         } catch (PDOException $e) {
@@ -41,23 +42,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>投稿画面</title>
 </head>
 
 <body>
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 
 
-    <form action="<?php
-    echo $_SERVER['PHP_SELF'];
-
-
-    ?>" method="post">
         <dl>
             <dt>表題：</dt>
             <dd><input type="text" name="title" size="60" value="<?php echo $title_value; ?>" /></dd>
@@ -72,11 +70,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </dl><input type="reset" value="リセット" />
         <input type="submit" value="送信" name="submit" />
 
-
-
     </form>
 
 </body>
-
 
 </html>
