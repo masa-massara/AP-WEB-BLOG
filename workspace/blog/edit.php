@@ -41,11 +41,11 @@ try {
 
       if ($sth) {
         // 編集が成功したらリダイレクト
-        header('Location: ./successEdit.php');
+        header('Location: ./messages/successEdit.php');
         exit();
       } else {
         // 編集が失敗したらリダイレクト
-        header('Location: ./failedEdit.php');
+        header('Location: ./messages/failedEdit.php');
         exit();
       }
 

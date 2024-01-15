@@ -31,7 +31,7 @@ if (isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
             $_POST["password"] = null;
 
             // 投稿が成功したらリダイレクト
-            header('Location: ./successPost.php');
+            header('Location: ./messages/successPost.php');
             exit();
 
 
