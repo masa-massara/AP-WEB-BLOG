@@ -36,12 +36,13 @@
                <input type="submit" value="編集">
                <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
             </p>
-            <p>
-               <input type="submit" value="削除">
-               パスワード：<input type="password" name="password" size="20" />
-               <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
-            </p>
+
          </form>
+         <p>
+            <input type="submit" value="削除">
+            パスワード：<input type="password" name="password" size="20" />
+            <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
+         </p>
          (
          <?php echo $time[0] . "年" . $time[1] . "月" . $time[2] . "日 " . $time[3] . ":" . $time[4] ?>)
          </p>
