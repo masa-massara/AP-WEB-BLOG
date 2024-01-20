@@ -1,7 +1,8 @@
 <?php if (isset($_POST["id"])) {
     if (!isset($_POST["password"]) || $_POST["password"] != 'correctPass') {
-        $test_alert = "<script type='text/javascript'>alert('パスワードが違います。');</script>";
-        echo $test_alert;
+        // 削除が成功したらリダイレクト
+        header('Location: ./messages/failedDelete.php');
+        exit();
     } else {
         //PDOクラスのオブジェクトの作成
         $dbh = new PDO('sqlite:blog.db', '', '');
