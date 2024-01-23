@@ -3,18 +3,15 @@
 <head>
    <meta charset="utf-8">
    <title>由川聖弥のブログサイト</title>
-   <link rel="stylesheet" href="css/index.css">
+   <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
    <h1>由川聖弥のブログ</h1>
    <form action="post.php" method="post">
-      <p>
-      <div class="button018">
-         <input type="submit" value="作成">
-      </div>
-      </p>
+      <button class="bn30" type="submit">Button</button>
    </form>
+
 
    <hr />
 
