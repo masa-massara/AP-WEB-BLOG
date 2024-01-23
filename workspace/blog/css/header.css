@@ -1,0 +1,8 @@
+/* ヘッダーの装飾をする */
+
+h1 {
+
+    background: -webkit-linear-gradient(45deg, #4568dc, #b06ab3);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
