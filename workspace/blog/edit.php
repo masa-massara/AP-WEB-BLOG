@@ -67,10 +67,13 @@ try {
 <head>
   <meta charset="utf-8">
   <title>ブログ記事の編集</title>
+  <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
-  <h1>ブログ記事の編集</h1>
+  <header>
+    <h1>応プロ(WEB)・最終レポート</h1>
+  </header>
 
   <p><a href="index.php">blog閲覧ページはこちら</a></p>
   <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">

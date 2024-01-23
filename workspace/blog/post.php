@@ -50,9 +50,14 @@ if (isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>投稿画面</title>
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
+    <header>
+        <h1>応プロ(WEB)・最終レポート</h1>
+    </header>
+
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 
 
