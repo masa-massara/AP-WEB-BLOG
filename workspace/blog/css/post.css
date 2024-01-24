@@ -28,3 +28,8 @@ dt {
   margin-top: 30px;
   font-weight: bold;
 }
+
+.post-title {
+  font-size: larger;
+  font-weight: bold;
+}

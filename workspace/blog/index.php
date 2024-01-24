@@ -34,9 +34,9 @@
          $dbh = new PDO('sqlite:blog.db', '', '');   //PDOクラスのオブジェクトの作成
       
          if (isset($_POST['desc']) == true) {
-            $sth = $dbh->prepare("select * from posts order by date desc");
-         } elseif (isset($_POST['asc']) == true) {
             $sth = $dbh->prepare("select * from posts order by date asc");
+         } else {
+            $sth = $dbh->prepare("select * from posts order by date desc");
          }
          //prepareメソッドでSQL文の準備
       
@@ -46,21 +46,21 @@
             //テーブルの内容を１行ずつ処理
             $time = preg_split("/[\s.:-]+/", $row['date']);
             ?>
-            <h3>
+            <p class="post-title">
                <?php echo $row['title'] ?>
-            </h3>
+            </p>
 
             <div class="message-box">
                <p>
                   <?php echo $row['contents'] ?><br>
-               <p>
+               </p>
             </div>
 
             <div class="buttons">
                <div class="edit-button">
                   <form action="edit.php" method="post">
                      <button class="bn30" type="submit">&nbsp;&nbsp;Edit&nbsp;&nbsp;</button>
-                     <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
+                     <input type="hidden" name="id" value="<?php echo $row['id'] ?>" />
                   </form>
                </div>
 
@@ -68,7 +68,7 @@
                   <form action="delete.php" method="post">
                      <button class="bn30" type="submit">Delete</button>
                      <input type="password" name="password" size="20" placeholder="パスワードを入力" required />
-                     <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
+                     <input type="hidden" name="id" value="<?php echo $row['id'] ?>" />
                   </form>
                </div>
             </div>
