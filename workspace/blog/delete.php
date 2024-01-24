@@ -1,6 +1,6 @@
 <?php if (isset($_POST["id"])) {
     if (!isset($_POST["password"]) || $_POST["password"] != 'correctPass') {
-        // 削除が成功したらリダイレクト
+        // 削除が失敗したらリダイレクト
         header('Location: ./messages/failedDelete.php');
         exit();
     } else {
