@@ -1,8 +1,13 @@
 @charset "UTF-8";
 /* ヘッダーの装飾をする */
+header {
+  padding: 10px 30px;
+}
+
 h1 {
   background: -webkit-linear-gradient(45deg, #4568dc, #b06ab3);
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin: 0%;
 }

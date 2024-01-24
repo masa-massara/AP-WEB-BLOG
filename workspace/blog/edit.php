@@ -70,6 +70,8 @@ try {
   <link rel="stylesheet" href="./css/button.css">
   <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/post.css">
+
 </head>
 
 <body>
@@ -77,20 +79,22 @@ try {
     <h1>応プロ(WEB)・最終レポート</h1>
   </header>
 
-  <p><a href="index.php">blog閲覧ページはこちら</a></p>
-  <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-    <dl>
-      <dt>表題：</dt>
-      <dd><input type="text" name="title" value="<?php echo $_POST["title"] ?>" size="60" /></dd>
-      <dt>本文：</dt>
-      <dd><textarea name="contents" rows="10" cols="60"><?php echo $_POST["contents"] ?></textarea></dd>
-      <dt>パスワード：</dt>
-      <dd><input type="password" name="password" size="20" /></dd>
-    </dl>
-    <input type="hidden" name="id" value="<?php echo $_POST["id"] ?>" />
-    <input type="reset" value="リセット" />
-    <input type="submit" value="送信" />
-  </form>
+  <div class="container">
+    <p><a href="index.php">blog閲覧ページはこちら</a></p>
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+      <dl>
+        <dt>表題：</dt>
+        <dd><input type="text" name="title" value="<?php echo $_POST["title"] ?>" size="60" /></dd>
+        <dt>本文：</dt>
+        <dd><textarea name="contents" rows="10" cols="60"><?php echo $_POST["contents"] ?></textarea></dd>
+        <dt>パスワード：</dt>
+        <dd><input type="password" name="password" size="20" /></dd>
+      </dl>
+      <input type="hidden" name="id" value="<?php echo $_POST["id"] ?>" />
+      <button class="bn30" type="reset">&nbsp;Reset&nbsp;</button>
+      <button class="bn30" type="submit" name="submit">Submit</button>
+    </form>
+  </div>
 </body>
 
 </html>

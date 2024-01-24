@@ -53,32 +53,37 @@ if (isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="./css/button.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/post.css">
+
 </head>
 
 <body>
     <header>
         <h1>応プロ(WEB)・最終レポート</h1>
     </header>
+    <div class="container">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 
-
-        <dl>
-            <dt>表題：</dt>
-            <dd><input type="text" name="title" size="60" value="<?php echo $title_value; ?>" /></dd>
-            <dt>本文：</dt>
-            <dd>
-                <textarea name=" contents" rows="10" cols="60"><?php echo $contents_value; ?></textarea>
-            </dd>
-            <dt>パスワード：</dt>
-            <dd>
-                <input type="password" name="password">
-            </dd>
-        </dl>
-        <button class="bn30" type="reset">&nbsp;Reset&nbsp;</button>
-        <button class="bn30" type="submit">Submit</button>
-    </form>
-
+            <dl>
+                <dt>表題：</dt>
+                <dd><input type="text" name="title" size="60" placeholder="タイトルを入力"
+                        value="<?php echo $title_value; ?> " />
+                </dd>
+                <dt>本文：</dt>
+                <dd>
+                    <textarea name="contents" rows="10" cols="60"
+                        placeholder="本文を入力"><?php echo $contents_value; ?></textarea>
+                </dd>
+                <dt>パスワード：</dt>
+                <dd>
+                    <input type="password" name="password" placeholder="パスワードを入力">
+                </dd>
+            </dl>
+            <button class="bn30" type="reset">&nbsp;Reset&nbsp;</button>
+            <button class="bn30" type="submit" name="submit">Submit</button>
+        </form>
+        </div>
 </body>
 
 </html>

@@ -1,0 +1,30 @@
+.message-box {
+  background-color: rgba(253, 253, 253, 0.82);
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: inset 0px 0px 22px 2px rgba(175, 175, 175, 0.18);
+}
+
+.buttons {
+  display: flex;
+  padding: 20px 0px 0px 0px;
+  gap: 15px;
+}
+
+.order-button {
+  margin-left: auto;
+}
+
+.timestamp {
+  text-align: end;
+}
+.timestamp > p {
+  margin: 5px;
+  color: #b0b0b0;
+  font-size: small;
+}
+
+dt {
+  margin-top: 30px;
+  font-weight: bold;
+}

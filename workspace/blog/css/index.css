@@ -1,6 +1,5 @@
+@charset "UTF-8";
 /* 全体の装飾をするcss */
-
-html {
-    background-color: #ffffff;
-    padding: 30px;
+.container {
+  padding: 0px 30px 30px 30px;
 }
