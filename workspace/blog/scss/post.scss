@@ -2,13 +2,19 @@
   background-color: rgba(253, 253, 253, 0.82);
   padding: 30px;
   border-radius: 5px;
+  position: relative;
   box-shadow: inset 0px 0px 22px 2px rgba(175, 175, 175, 0.18);
 }
 
 .buttons {
+  > .post-title {
+    margin-right: auto;
+  }
   display: flex;
   padding: 20px 0px 0px 0px;
   gap: 15px;
+  align-items: center;
+  justify-content: center;
 }
 
 .order-button {
@@ -21,7 +27,12 @@
     color: #b0b0b0;
     font-size: small;
   }
+  text-align: right;
+  position: absolute;
   text-align: end;
+  display: inline;
+  bottom: 5px;
+  right: 5px;
 }
 
 dt {
@@ -47,4 +58,26 @@ textarea {
   padding-top: 10px;
   gap: 20px;
   display: flex;
+}
+
+.comment-box {
+  background-color: rgba(253, 253, 253, 0.82);
+  padding: 10px;
+  margin: 5px 0px 5px 80px;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: inset 0px 0px 22px 2px rgba(175, 175, 175, 0.18);
+  > .timestamp {
+    > p {
+      margin: 5px;
+      color: #b0b0b0;
+      font-size: small;
+    }
+    text-align: right;
+    position: absolute;
+    text-align: end;
+    display: inline;
+    bottom: 5px;
+    right: 5px;
+  }
 }

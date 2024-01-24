@@ -2,8 +2,14 @@
 
 .container {
   padding: 0px 30px 30px 30px;
+  max-width: 900px;
 }
 
-body{
-  margin: 0px 150px ;
+body {
+  margin: 0px 50px;
+  max-width: 600;
+}
+
+hr {
+  margin: 20px 0px 0px;
 }
