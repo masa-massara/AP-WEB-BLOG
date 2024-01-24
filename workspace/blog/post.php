@@ -47,9 +47,11 @@ if (isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>投稿画面</title>
+    <link rel="stylesheet" href="./css/button.css">
+    <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
 
@@ -72,9 +74,9 @@ if (isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
             <dd>
                 <input type="password" name="password">
             </dd>
-        </dl><input type="reset" value="リセット" />
-        <input type="submit" value="送信" name="submit" />
-
+        </dl>
+        <button class="bn30" type="reset">&nbsp;Reset&nbsp;</button>
+        <button class="bn30" type="submit">Submit</button>
     </form>
 
 </body>

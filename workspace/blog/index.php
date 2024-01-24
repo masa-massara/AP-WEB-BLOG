@@ -1,7 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
    <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>由川聖弥のブログサイト</title>
    <link rel="stylesheet" href="./css/button.css">
    <link rel="stylesheet" href="./css/header.css">
@@ -37,20 +39,17 @@
          <p>
             <?php echo $row['contents'] ?><br>
          <form action="edit.php" method="post">
-            <p>
-               <input type="submit" value="編集">
-               <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
-            </p>
+
+            <button class="bn30" type="submit">&nbsp;&nbsp;Edit&nbsp;&nbsp;</button>
+            <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
+
 
          </form>
          <p>
          <form action="delete.php" method="post">
-            <p>
-               <input type="submit" value="削除">
-               パスワード：<input type="password" name="password" size="20" />
-               <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
-            </p>
-
+            <button class="bn30" type="submit">Delete</button>
+            パスワード：<input type="password" name="password" size="20" />
+            <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
          </form>
          <p>
             (

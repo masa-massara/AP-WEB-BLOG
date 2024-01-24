@@ -61,12 +61,14 @@ try {
 
 ?>
 
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <title>ブログ記事の編集</title>
+  <link rel="stylesheet" href="./css/button.css">
+  <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/index.css">
 </head>
 
