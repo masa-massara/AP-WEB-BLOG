@@ -29,8 +29,22 @@ dt {
   font-weight: bold;
 }
 
-
-.post-title{
+.post-title {
   font-size: larger;
-  font-weight: bold
+  font-weight: bold;
+}
+
+textarea {
+  border: 2px solid #cccccc;
+  border-radius: 6px;
+  resize: none;
+  margin-top: 5px;
+  border: 2px solid #cccccc;
+  outline: 0;
+}
+
+.reply-button {
+  padding-top: 10px;
+  gap: 20px;
+  display: flex;
 }
