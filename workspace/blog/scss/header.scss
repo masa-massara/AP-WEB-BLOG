@@ -1,6 +1,15 @@
 /* ヘッダーの装飾をする */
 header {
+  max-width: 600px;
   padding: 10px 30px;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    url(../images/splash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 h1 {
   background: -webkit-linear-gradient(45deg, #4568dc, #b06ab3);
