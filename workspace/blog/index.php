@@ -71,6 +71,14 @@
                      <input type="hidden" name="id" value="<?php echo $row['id'] ?>" />
                   </form>
                </div>
+
+
+            </div>
+            <div>
+               <form action="edit.php" method="post" class="reply-button">
+                  <button class="bn30" type="submit">Reply&nbsp;</button>
+                  <textarea name="reply-contents" cols="30" rows="1" required></textarea>
+               </form>
             </div>
 
             <div class="timestamp">
