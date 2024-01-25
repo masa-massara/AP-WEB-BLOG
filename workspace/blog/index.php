@@ -12,11 +12,16 @@
 </head>
 
 <body>
+
+   <!-- ページのヘッダー -->
    <header>
       <h1>応プロ(WEB)・最終レポート</h1>
    </header>
 
+   <!-- コンテンツのコンテナ -->
    <div class="container">
+
+      <!-- 投稿の並び替えボタン -->
       <div class="buttons">
          <form action="post.php" method="post">
             <button class="bn30" type="submit">Create</button>
@@ -31,23 +36,25 @@
 
       <?php
       try {
-         $dbh = new PDO('sqlite:blog.db', '', '');   //PDOクラスのオブジェクトの作成
-      
-         //prepareメソッドでSQL文の準備
+         // データベースに接続
+         $dbh = new PDO('sqlite:blog.db', '', '');
+
+         // 投稿の並び順を決定
          if (isset($_POST['desc']) == true) {
             $sth = $dbh->prepare("select * from posts order by date asc");
          } else {
             $sth = $dbh->prepare("select * from posts order by date desc");
          }
 
+         // 投稿の取得と表示
+         $sth->execute();
 
-         $sth->execute();   //準備したSQL文の実行
-      
          while ($row = $sth->fetch()) {
             //テーブルの内容を１行ずつ処理
             $time = preg_split("/[\s.:-]+/", $row['date']);
             ?>
 
+            <!-- 投稿のタイトルと編集・削除ボタン -->
             <div class="buttons">
                <p class="post-title">
                   <?php echo $row['title'] ?>
@@ -70,6 +77,7 @@
 
             </div>
 
+            <!-- 返信欄 -->
             <div class="message-box">
                <p>
                   <?php echo $row['contents'] ?><br>
@@ -102,6 +110,7 @@
             ?>
 
 
+            <!-- 返信用ボタン・フォーム -->
             <div>
                <form action="comment.php" method="post" class="reply-button">
                   <button class="bn30" type="submit">Reply&nbsp;</button>
