@@ -12,14 +12,13 @@
 </head>
 
 <body>
-
-   <!-- ページのヘッダー -->
-   <header>
-      <h1>応プロ(WEB)・最終レポート</h1>
-   </header>
-
    <!-- コンテンツのコンテナ -->
    <div class="container">
+
+      <!-- ページのヘッダー -->
+      <header>
+         <h1>応プロ(WEB)・最終レポート</h1>
+      </header>
 
       <!-- 投稿の並び替えボタン -->
       <div class="buttons">

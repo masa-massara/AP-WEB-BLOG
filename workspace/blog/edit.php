@@ -75,11 +75,10 @@ try {
 </head>
 
 <body>
+  <div class="container">
   <header>
     <h1>応プロ(WEB)・最終レポート</h1>
   </header>
-
-  <div class="container">
     <p><a href="index.php">blog閲覧ページはこちら</a></p>
     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
       <dl>

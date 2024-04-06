@@ -58,13 +58,11 @@ if (isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-    <header>
-        <h1>応プロ(WEB)・最終レポート</h1>
-    </header>
     <div class="container">
+        <header>
+            <h1>応プロ(WEB)・最終レポート</h1>
+        </header>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-
-
             <dl>
                 <dt>表題：</dt>
                 <dd><input type="text" name="title" size="60" placeholder="タイトルを入力"
@@ -83,7 +81,7 @@ if (isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
             <button class="bn30" type="reset">&nbsp;Reset&nbsp;</button>
             <button class="bn30" type="submit" name="submit">Submit</button>
         </form>
-        </div>
+    </div>
 </body>
 
 </html>
